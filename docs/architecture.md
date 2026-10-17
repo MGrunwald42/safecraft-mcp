@@ -16,19 +16,19 @@ flowchart TB
             Launcher["SandboxLauncher + JobLimits"]
             Transfer["WorkspaceTools / FileTransfer<br/>import / export through grants"]
             ChildRpc["ChildConnection<br/>JSON-RPC client to the app"]
-            Log["FileLog<br/>%LOCALAPPDATA%\\safecraft-mcp\\logs"]
+            Log["FileLog<br/>%LOCALAPPDATA%\safecraft-mcp\logs"]
         end
     end
 
     subgraph host["Host filesystem"]
         Grants["Granted folders<br/>--grant-read / --grant-write"]
-        Bin["Frozen binaries<br/>bin\\&lt;app&gt;\\&lt;sha256&gt;\\"]
+        Bin["Frozen binaries<br/>bin\{app}\{sha256}\"]
         WS["Session workspace<br/>(one per session, deleted on close)"]
-        Src["&lt;app&gt;-cli.exe builds<br/>(update-craft / MSI)"]
+        Src["{app}-cli.exe builds<br/>(update-craft / MSI)"]
     end
 
     subgraph mxc["MXC ProcessContainer (Tier 1 BaseContainer)"]
-        App["&lt;app&gt;-cli.exe mcp<br/>PhotoCraft / VectorCraft / PdfCraft<br/><b>untrusted</b><br/><i>no network · no UI · no clipboard<br/>Job Object caps</i>"]
+        App["{app}-cli.exe mcp<br/>PhotoCraft / VectorCraft / PdfCraft<br/><b>untrusted</b><br/><i>no network · no UI · no clipboard<br/>Job Object caps</i>"]
     end
 
     Agent <--> Client
@@ -45,7 +45,6 @@ flowchart TB
     App -.->|"read only"| Bin
     App -.->|"read/write"| WS
     App -.-x|"denied"| Grants
-    gw --> Log
 ```
 
 - **Trust boundary:** only the app runs inside MXC. The agent, the client and the gateway are
