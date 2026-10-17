@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Mxc.Sdk" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Mxc.Sdk" Version="1.0.1" />
     <PackageReference Include="ModelContextProtocol.Core" Version="2.2.0" />
   </ItemGroup>
 
