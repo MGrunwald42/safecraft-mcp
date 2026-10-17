@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\apps\*.json" LogicalName="apps/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="..\..\guides\*.md" LogicalName="guides/%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SafeCraftMcp.Settings\SafeCraftMcp.Settings.csproj" />
+  </ItemGroup>
+
+</Project>

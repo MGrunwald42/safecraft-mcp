@@ -1,0 +1,14 @@
+safecraft-mcp
+Copyright (c) 2026 Martin Grunwald. Licensed under the MIT License (LICENSE).
+
+The guides in guides/ are written from the documentation of PhotoCraft, VectorCraft and PdfCraft
+(https://github.com/storytold), Copyright (c) 2026 ArtCraft Team and contributors, licensed under
+the MIT License or the Apache License, Version 2.0.
+
+PhotoCraft, VectorCraft, PdfCraft, FilmCraft and ArtCraft are names of the ArtCraft Team. MXC is
+Microsoft's. safecraft-mcp is not affiliated with or endorsed by either; the names are used only
+to identify the software it works with.
+
+safecraft-mcp does not include or redistribute any of those apps. NuGet dependencies are restored
+at build time under their own licenses; Microsoft.Mxc.Sdk's native files are copied next to the
+exe by publish.ps1.

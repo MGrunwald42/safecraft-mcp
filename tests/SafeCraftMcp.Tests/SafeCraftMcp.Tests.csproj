@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <!-- CommandLineTests calls CommandLineToArgvW through LibraryImport. -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SafeCraftMcp.Settings\SafeCraftMcp.Settings.csproj" />
+    <ProjectReference Include="..\..\src\SafeCraftMcp.Registry\SafeCraftMcp.Registry.csproj" />
+    <ProjectReference Include="..\..\src\SafeCraftMcp.Sandbox\SafeCraftMcp.Sandbox.csproj" />
+    <ProjectReference Include="..\..\src\SafeCraftMcp.ChildRpc\SafeCraftMcp.ChildRpc.csproj" />
+    <ProjectReference Include="..\..\src\SafeCraftMcp.Server\SafeCraftMcp.Server.csproj" />
+  </ItemGroup>
+
+</Project>

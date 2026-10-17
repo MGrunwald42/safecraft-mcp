@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SafeCraftMcp.ChildRpc/SafeCraftMcp.ChildRpc.csproj" />
+    <Project Path="src/SafeCraftMcp.Registry/SafeCraftMcp.Registry.csproj" />
+    <Project Path="src/SafeCraftMcp.Sandbox/SafeCraftMcp.Sandbox.csproj" />
+    <Project Path="src/SafeCraftMcp.Server/SafeCraftMcp.Server.csproj" />
+    <Project Path="src/SafeCraftMcp.Settings/SafeCraftMcp.Settings.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SafeCraftMcp.IntegrationTests/SafeCraftMcp.IntegrationTests.csproj" />
+    <Project Path="tests/SafeCraftMcp.Tests/SafeCraftMcp.Tests.csproj" />
+  </Folder>
+</Solution>

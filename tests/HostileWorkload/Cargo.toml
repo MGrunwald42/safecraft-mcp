@@ -1,0 +1,15 @@
+# A deliberately hostile program for the escape suite. Rust with only std, like the
+# craft apps: a .NET program can't even start in the sandbox (its runtime loads ole32 and user32,
+# which the UI lockdown stops, 0xC0000142; see docs/sandbox-notes.md).
+[package]
+name = "hostile-workload"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "hostile-workload"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 1

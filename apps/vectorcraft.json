@@ -1,0 +1,81 @@
+{
+  "id": "vectorcraft",
+  "display": "VectorCraft",
+  "repo": "storytold/vectorcraft",
+  "binary": "vectorcraft-cli.exe",
+  "search": [
+    "{repos}/vectorcraft/target/release",
+    "{ProgramFiles}/VectorCraft"
+  ],
+  "args": [
+    "mcp",
+    "--headless",
+    "--automation-read-root",
+    "{workspace}",
+    "--automation-write-root",
+    "{workspace}"
+  ],
+  "env": {
+    "VECTORCRAFT_NO_PREFS": "1"
+  },
+  "ready": true,
+  "callTimeoutSeconds": 60,
+  "import": [
+    "vectorcraft",
+    "vctemplate",
+    "ai",
+    "ait",
+    "pdf",
+    "eps",
+    "svg",
+    "svgz",
+    "dxf",
+    "emf",
+    "wmf",
+    "psd",
+    "psb",
+    "png",
+    "jpg",
+    "jpeg",
+    "gif",
+    "bmp",
+    "tif",
+    "tiff",
+    "webp",
+    "txt"
+  ],
+  "export": [
+    "vectorcraft",
+    "vctemplate",
+    "ai",
+    "pdf",
+    "eps",
+    "svg",
+    "svgz",
+    "dxf",
+    "emf",
+    "wmf",
+    "psd",
+    "png",
+    "jpg",
+    "jpeg",
+    "gif",
+    "bmp",
+    "tif",
+    "tiff",
+    "tga",
+    "webp",
+    "txt",
+    "css"
+  ],
+  "maxFileMb": 512,
+  "previewTools": [
+    "render_preview"
+  ],
+  "longTools": [
+    "save_file",
+    "export"
+  ],
+  "openTool": "open_file",
+  "openToolPathArgument": "path"
+}

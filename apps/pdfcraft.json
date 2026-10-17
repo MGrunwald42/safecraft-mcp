@@ -1,0 +1,64 @@
+{
+  "id": "pdfcraft",
+  "display": "PdfCraft",
+  "repo": "storytold/pdfcraft",
+  "binary": "pdfcraft-cli.exe",
+  "search": [
+    "{repos}/pdfcraft/target/release",
+    "{ProgramFiles}/PdfCraft"
+  ],
+  "args": [
+    "mcp",
+    "--root",
+    "{workspace}"
+  ],
+  "env": {},
+  "ready": true,
+  "callTimeoutSeconds": 60,
+  "import": [
+    "pdf",
+    "fdf",
+    "xfdf",
+    "xml",
+    "csv",
+    "txt",
+    "jpg",
+    "jpeg",
+    "png",
+    "tif",
+    "tiff",
+    "gif",
+    "bmp",
+    "jp2"
+  ],
+  "export": [
+    "pdf",
+    "fdf",
+    "xfdf",
+    "xml",
+    "csv",
+    "txt"
+  ],
+  "maxFileMb": 512,
+  "previewTools": [
+    "render_preview"
+  ],
+  "longTools": [
+    "doc_save",
+    "doc_export_office",
+    "doc_export_images",
+    "doc_export_all_images",
+    "doc_export_text",
+    "doc_export_data",
+    "ocr_recognize",
+    "ocr_recognize_files",
+    "doc_optimize",
+    "doc_reduce",
+    "doc_combine",
+    "doc_split",
+    "pdfa_convert",
+    "doc_flatten"
+  ],
+  "openTool": "doc_open",
+  "openToolPathArgument": "path"
+}

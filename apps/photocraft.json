@@ -1,0 +1,78 @@
+{
+  "id": "photocraft",
+  "display": "PhotoCraft",
+  "repo": "storytold/photocraft",
+  "binary": "photocraft-cli.exe",
+  "search": [
+    "{repos}/photocraft/target/release",
+    "{ProgramFiles}/PhotoCraft"
+  ],
+  "args": [
+    "mcp",
+    "--automation-read-root",
+    "{workspace}",
+    "--automation-write-root",
+    "{workspace}"
+  ],
+  "env": {},
+  "ready": true,
+  "callTimeoutSeconds": 60,
+  "import": [
+    "psd",
+    "psb",
+    "pcraft",
+    "tif",
+    "tiff",
+    "jpg",
+    "jpeg",
+    "png",
+    "gif",
+    "bmp",
+    "webp",
+    "heic",
+    "heif",
+    "exr",
+    "hdr",
+    "tga",
+    "svg",
+    "dng",
+    "cr2",
+    "nef",
+    "nrw",
+    "arw",
+    "rw2",
+    "pef",
+    "orf",
+    "raf"
+  ],
+  "export": [
+    "psd",
+    "psb",
+    "pcraft",
+    "tif",
+    "tiff",
+    "jpg",
+    "jpeg",
+    "png",
+    "gif",
+    "bmp",
+    "webp",
+    "exr",
+    "hdr",
+    "tga",
+    "pdf"
+  ],
+  "maxFileMb": 2048,
+  "previewTools": [
+    "render_preview",
+    "doc_render_preview"
+  ],
+  "longTools": [
+    "doc_save",
+    "doc_export",
+    "doc_export_layers",
+    "doc_export_data_sets"
+  ],
+  "openTool": "doc_open",
+  "openToolPathArgument": "path"
+}

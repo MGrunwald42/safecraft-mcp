@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - run: dotnet build SafeCraftMcp.slnx -c Release
+      # The Mxc category needs a host with MXC Process Isolation; those tests skip themselves elsewhere.
+      - run: dotnet test SafeCraftMcp.slnx -c Release --no-build
