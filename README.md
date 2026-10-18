@@ -203,8 +203,11 @@ The gateway also offers one prompt per app with a guide (`photocraft-start`, `ve
 
 ## License
 
-[MIT](LICENSE). The app guides in `guides/` are based on the apps' own documentation; see
-[NOTICE](NOTICE).
+Licensed under either of [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
+Unless you say otherwise, any contribution you submit is licensed the same way, without
+additional terms.
+
+The app guides in `guides/` are based on the apps' own documentation; see [NOTICE](NOTICE).
 
 safecraft-mcp is an independent project. It is not affiliated with, endorsed by or sponsored by
 the ArtCraft Team, the makers of PhotoCraft, VectorCraft, PdfCraft and FilmCraft, or by Microsoft.
