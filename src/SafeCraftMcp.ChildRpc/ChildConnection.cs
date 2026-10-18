@@ -101,6 +101,12 @@ public sealed class ChildConnection : IAsyncDisposable
         }
         catch (Exception ex) when (ex is not OutOfMemoryException)
         {
+            // An app that quit on its own (a missing DLL, a crash at startup) is explained by its
+            // exit code, read before the kill below could replace it.
+            var exited = "";
+            if (!limit.IsCancellationRequested && !output.Overflowed && ex is not McpException
+                && await Task.WhenAny(exit, Task.Delay(ExitGrace, CancellationToken.None)) == exit && exit.IsCompletedSuccessfully)
+                exited = $" (it exited with code 0x{exit.Result.ExitCode:X8})";
             KillQuietly(process);
             if (client is not null)
                 await DisposeQuietly(client);
@@ -112,7 +118,7 @@ public sealed class ChildConnection : IAsyncDisposable
             var reason = output.Overflowed ? $"it wrote a message longer than {maxMessageBytes} bytes"
                 : limit.IsCancellationRequested ? $"it didn't answer within {timeout.TotalSeconds:0} s"
                 : ex is McpException ? "it answered with an error"
-                : ex.Message;
+                : ex.Message.TrimEnd('.') + exited;
             var appOutput = (ex is McpException ? ex.Message + "\n" : "") + stderr.Text;
             throw new ChildException($"{name} didn't complete the MCP handshake: {reason}.", appOutput, ex);
         }
