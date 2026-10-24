@@ -2,7 +2,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Mxc.Sdk" Version="1.0.1" />
-    <PackageReference Include="ModelContextProtocol.Core" Version="2.2.0" />
+    <PackageReference Include="ModelContextProtocol.Core" Version="2.3.0" />
   </ItemGroup>
 
 </Project>
